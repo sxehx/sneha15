@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sacred Heart PU College Madanthyar - An esteemed educational institution established in 1981.">
+    <title>Sacred Heart PU College Madanthyar</title>
+    <style>
+        /* Reset default browser styling */
+        body, h1, h2, h3, p {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: url('clgimg2.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative; /* Needed for ::before pseudo-element */
+            scroll-behavior: smooth;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(3px); /* Adjust blur intensity here */
+            z-index: -1; /* Place it behind the main content */
+        }
+
+        header {
+            background-color:lightskyblue; /* Semi-transparent background */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header img.logo {
+            max-width: 100px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            background: transparent;
+            border: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 1.2em;
+            transition: color 0.3s ease, font-weight 0.3s ease;
+        }
+
+        .menu a.active, .menu a:hover {
+            text-decoration: underline;
+            color: #0056b3; /* Darker shade of blue */
+            font-weight: bold;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 20px 0;
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .intro-content {
+            
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .intro-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .intro-content img:hover {
+            transform: scale(1.05);
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border: 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #ddd;
+            margin-top: 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            background: transparent;
+            border: none;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: rgba(244, 244, 244, 0.9);
+            }
+
+            .menu a {
+                padding: 10px;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+        }
+
+        /* Back to Top Button */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #back-to-top:hover {
+            background: #0056b3;
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        button {
+            background: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        blockquote {
+            background: rgba(255, 255, 255, 0.8);
+            border-left: 5px solid #007BFF;
+            padding: 20px;
+            margin: 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        blockquote footer {
+            text-align: right;
+            font-style: italic;
+        }
+
+        /* Events Section */
+        #Events ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #Events li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        #mycls{
+            justify-content: center;
+            background-color: lightcyan;
+        }
+        .Intro{
+            font-size: large;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <img src="clgimg3.jpeg" alt="Sacred Heart PU College Logo" class="logo">
+        <h1>SACRED HEART PU COLLEGE MADANTHYAR</h1>
+        <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+        <nav class="menu">
+            <a href="#Intro">Introduction</a>
+            <a href="#Facilities">Facilities</a>
+            <a href="#Courses">Courses</a>
+            <a href="#Achievement">Achievements</a>
+            <a href="#Contactus">Contact Us</a>   
+            
+            <a href="#Testimonials">Testimonials</a>
+            <a href="#Events">Events</a>
+            <a href="#Location">Location</a>
+        </nav>
+    </header>
+
+    <hr>
+    
+    <section id="Intro">
+        <h1 class="s1">Introduction</h1>
+        <div class="intro-content">
+            <img src="clgimg.jpeg" alt="Campus view of Sacred Heart PU College">
+            <p class="mycls">Sacred Heart Pre-University College Madanthyar is a renowned educational institution attracting students from various districts such as Chikamagaluru, Coorg, Dakshina Kannada, and Mysore. Established in 1981 by the late Rev. Fr. Liguory Dsouza, the college received grant-in-aid in 1988 for the PU College and in 1986 for the high school. The college is accredited with an A grade status by the PU Education Department. Currently, there are 579 students enrolled in the PU College and 45 staff members. Rev. Fr. Jerome Dsouza is the current Principal.</p>
+        </div>
+    </section>
+    
+    <section id="Facilities">
+        <h1>Facilities</h1>
+        <p>• The college has excellent infrastructure.<br>
+           • Experienced teaching faculty and office staff.<br>
+           • Well-equipped Physics, Chemistry, Biology, and Computer labs.<br>
+           • CCTV Surveillance and security guards.<br>
+           • Hostel facilities for boys and girls.<br>
+           • Free CET Coaching for minorities, SC, ST, and OBC.<br>
+           • Literary and co-curricular activities including athletics and games.<br>
+        </p>
+    </section>
+    
+    <section id="Courses">
+        <h1>Courses</h1>
+        <p>At the PU level, the science combinations are PCMB and PCMC. In Commerce, there are three combinations: HEBA, EBAC, and EBAS. In the Arts section, the combination is HEPS.</p>
+    </section>
+    
+    <section id="Achievement">
+        <h1>Achievements</h1>
+        <p>Overall academic results at PU level in March 2018 were 88%: 3 Toppers, 24 Distinctions, 183 First Class, and 56 Second Class students.</p>
+    </section>
+
+    <section id="Contactus">
+        <h1>Contact Us</h1>
+        <p>Sacred Heart of Jesus Church<br>
+           Madanthyar P.O. 574224<br>
+           Belthangady Taluk, D.K.<br>
+           Tel.: 08256-279243<br>
+           E-mail: madanthyarchurch@gmail.com<br>
+        </p>
+        <form id="contact-form" action="your-server-endpoint" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
+    
+    <section id="Testimonials">
+        <h1>Testimonials</h1>
+        <div class="testimonials">
+            <blockquote>
+                <p>"Sacred Heart PU College provided me with a fantastic education and great opportunities for personal growth. Highly recommend!"</p>
+                <footer>- Sneha, Alumni</footer>
+            </blockquote>
+            
+        </div>
+    </section>
+
+    <section id="Events">
+        <h1>Upcoming Events</h1>
+        <ul>
+            <li >August 10, 2024: Annual Sports Day</li><img src="download (2).jpg" height="150px">
+            <li>September 5, 2024: Open House</li>
+            <li>October 15, 2024: Cultural Fest</li><img src="images (1).jpg" height="140px">
+        </ul>
+    </section>
+
+    <section id="Location">
+        <h1>Location</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7776.806415398945!2d75.18597192119648!3d12.94603126301764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4b0667acf139d%3A0x7443bb04bdfc2a13!2sSacred%20Heart%20College%20Madanthyar!5e0!3m2!1sen!2sin!4v1720595162862!5m2!1sen!2sin" width="600" height="450" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map location of Sacred Heart PU College Madanthyar"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sacred Heart PU College Madanthyar. All rights reserved.</p>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">&#8679;</button>
+
+    <script>
+        // Smooth scroll for the navigation links
+        document.querySelectorAll('.menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Responsive menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('show');
+        });
+
+        // Back to Top button
+        window.addEventListener('scroll', function() {
+            const button = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
